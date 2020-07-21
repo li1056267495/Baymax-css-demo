@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(191, 51, 52);
+}
+
+.BayMax {
+}
+.header {
+  z-index: 10;
+  width: 240px;
+  height: 154px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 600px;
+  background-color: white;
+  border: none;
+  box-shadow: 0 -15px 30px rgba(23, 34, 45, 0.2) inset,
+    0 5px 15px rgba(23, 34, 45, 0.2);
+  border-radius: 60%;
+  position: relative;
+  animation: bonk 0.6s ease-in-out 0.1s;
+}
+.header > .left-eye {
+  position: absolute;
+  background: black;
+  width: 22px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 100%;
+  top: 50px;
+  left: 50px;
+  animation: blink 4s ease-in-out infinite;
+}
+.header > .right-eye {
+  position: absolute;
+  background: black;
+  width: 22px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 100%;
+  top: 50px;
+  right: 50px;
+  animation: blink 4s ease-in-out infinite;
+}
+.header > .mouth {
+  position: absolute;
+  border: 2px solid rgba(32, 43, 54, 1);
+  width: 100px;
+  top: 61px;
+  right: 70px;
+}
+
+.body {
+  z-index: 7;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.body > .belly {
+  z-index: 5;
+  position: absolute;
+  background: white;
+  left: 120px;
+  width: 560px;
+  padding: 340px 0;
+  border-radius: 50%;
+  top: -6px;
+  box-shadow: 0 -60px 60px rgba(23, 34, 45, 0.25) inset,
+    0 10px 15px rgba(23, 34, 45, 0.25);
+  animation: shake 0.6s ease-in-out;
+}
+.body > .chest .battery {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 -10px 10px rgba(23, 34, 45, 0.15) inset,
+    6px 8px 6px rgba(23, 34, 45, 0.05);
+  right: 120px;
+  top: 100px;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  animation: shake 0.6s ease-in-out 0.1s;
+}
+.body > .chest > .battery > .top {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px;
+  border-radius: 100%;
+  box-shadow: 0 -4px 4px rgba(23, 34, 45, 0.35) inset,
+    2px 3px 2px rgba(23, 34, 45, 0.05);
+  animation: shake 0.6s ease-in-out 0.1s;
+}
+.body > .chest {
+  z-index: 6;
+  position: absolute;
+  background: rgba(248, 251, 251);
+  width: 480px;
+  padding: 320px 0;
+  border-radius: 50%;
+  right: 160px;
+  top: -40px;
+  animation: shake 0.6s ease-in-out 0.1s;
+}
+.left-arm {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  left: 86px;
+  top: 30px;
+  animation: left-shake 0.6s ease-in-out 0.2s;
+}
+
+.left-arm::before {
+  z-index: 2;
+  content: "";
+  display: block;
+  width: 200px;
+  height: 400px;
+  border-radius: 80% 0 60% 80%;
+  background-color: white;
+  transform: rotate(26deg);
+  box-shadow: 10px 10px 20px rgba(23, 34, 45, 0.1) inset,
+    2px 2px 2px rgba(23, 34, 45, 0.05);
+}
+.left-arm::after {
+  z-index: 3;
+  content: "";
+  display: block;
+  margin-top: -190px;
+  margin-left: -30px;
+  width: 160px;
+  height: 320px;
+  border-radius: 80% 80% 80% 80%;
+  background-color: white;
+  transform: rotate(-4deg);
+  box-shadow: 26px 2px 20px rgba(85, 85, 85, 0.15) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+}
+.right-arm {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  right: 86px;
+  top: 30px;
+  animation: right-shake 0.6s ease-in-out 0.2s;
+}
+.right-arm::before {
+  z-index: 2;
+  content: "";
+  display: block;
+  margin-top: -5px;
+  margin-left: 90px;
+  width: 200px;
+  height: 400px;
+  border-radius: 0 80% 80% 60%;
+  background-color: white;
+  transform: rotate(-26deg);
+  box-shadow: -10px -10px 20px rgba(23, 34, 45, 0.1) inset,
+    2px 2px 2px rgba(23, 34, 45, 0.05);
+}
+.right-arm::after {
+  z-index: 3;
+  content: "";
+  display: block;
+  margin-top: -190px;
+  margin-left: 160px;
+  width: 160px;
+  height: 320px;
+  border-radius: 80% 80% 80% 80%;
+  background-color: white;
+  transform: rotate(4deg);
+  box-shadow: -26px -2px 20px rgba(85, 85, 85, 0.15) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+}
+.left-fingers {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 86px;
+  top: 500px;
+}
+.left-fingers::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 30px;
+  top: 16px;
+  background: white;
+  width: 40px;
+  padding: 44px 0;
+  border-radius: 100%;
+  box-shadow: 6px -10px 10px rgba(85, 85, 85, 0.5) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+  transform: rotate(-30deg);
+  animation: leftf-shake 0.6s ease-in-out 0.2s;
+}
+.left-fingers::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  display: block;
+  left: 80px;
+  top: 12px;
+  background: white;
+  width: 30px;
+  padding: 36px 0;
+  border-radius: 100%;
+  box-shadow: 6px -10px 10px rgba(85, 85, 85, 0.5) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+  transform: rotate(-10deg);
+  animation: leftf-shake 0.6s ease-in-out 0.2s;
+}
+
+.right-fingers {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  right: 86px;
+  top: 500px;
+}
+.right-fingers::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background: white;
+  right: 30px;
+  top: 16px;
+  width: 40px;
+  padding: 44px 0;
+  border-radius: 100%;
+  box-shadow: -6px -10px 10px rgba(85, 85, 85, 0.5) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+  transform: rotate(20deg);
+  animation: rightf-shake 0.6s ease-in-out 0.2s;
+}
+.right-fingers::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  display: block;
+  right: 74px;
+  top: 12px;
+  background: white;
+  width: 30px;
+  padding: 36px 0;
+  border-radius: 100%;
+  box-shadow: -6px -10px 10px rgba(85, 85, 85, 0.5) inset,
+    3px 2px 3px rgba(23, 34, 45, 0.05);
+  transform: rotate(10deg);
+  animation: rightf-shake 0.6s ease-in-out 0.2s;
+}
+
+.leg {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  top: 600px;
+}
+.leg > .left-leg {
+  position: absolute;
+  width: 180px;
+  height: 280px;
+  top: -60px;
+  left: 66px;
+  background-color: white;
+  box-shadow: 10px -10px 7px rgba(23, 34, 45, 0.2) inset;
+  border-radius: 20% 15px 30px 54%;
+}
+.leg > .right-leg {
+  position: absolute;
+  width: 180px;
+  height: 280px;
+  top: -60px;
+  right: 66px;
+  background-color: white;
+  box-shadow: -10px -10px 7px rgba(23, 34, 45, 0.2) inset;
+  border-radius: 15px 20% 54% 30px;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1, 1);
+  }
+  49% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 0.1);
+  }
+  51% {
+    transform: scale(1, 1);
+  }
+  60% {
+    transform: scale(1, 1);
+  }
+  61% {
+    transform: scale(1, 0.1);
+  }
+  62% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(0.94);
+  }
+  48% {
+    transform: scale(1.06);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+  77% {
+    transform: scale(1.02);
+  }
+  88% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bonk {
+  0% {
+    transform: translate(0, -3%);
+  }
+  20% {
+    transform: translate(0, 6%);
+  }
+  40% {
+    transform: translate(0, 4%);
+  }
+  60% {
+    transform: translate(0, 5%);
+  }
+  100% {
+    transform: translate(0, -3%);
+  }
+}
+
+@keyframes left-shake {
+  0% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+  25% {
+    transform: rotate(-1deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(8deg) scale(1, 1);
+  }
+  75% {
+    transform: rotate(-2deg) scale(1, 1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+}
+
+@keyframes right-shake {
+  0% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+  25% {
+    transform: rotate(1deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(-8deg) scale(1, 1);
+  }
+  75% {
+    transform: rotate(2deg) scale(1, 1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+}
+
+@keyframes leftf-shake {
+  0% {
+    transform: rotate(-20deg) scale(1, 1);
+  }
+  25% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+  30% {
+    transform: rotate(-20deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(-40deg) scale(1, 1);
+  }
+  60% {
+    transform: rotate(-30deg) scale(1, 1);
+  }
+  75% {
+    transform: rotate(-10deg) scale(1, 1);
+  }
+  100% {
+    transform: rotate(-20deg) scale(1, 1);
+  }
+}
+
+@keyframes rightf-shake {
+  0% {
+    transform: rotate(20deg) scale(1, 1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1, 1);
+  }
+  30% {
+    transform: rotate(10deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(30deg) scale(1, 1);
+  }
+  60% {
+    transform: rotate(20deg) scale(1, 1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1, 1);
+  }
+  100% {
+    transform: rotate(20deg) scale(1, 1);
+  }
+}
+
+.body:hover {
+}
